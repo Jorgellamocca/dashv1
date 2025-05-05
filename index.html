@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pronósticos Climáticos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Pronósticos Climáticos del Dr. Jorge</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Último Boletín</h2>
+      <p><a href="boletines/boletin_2025_05.pdf" target="_blank">Descargar Boletín de Mayo 2025</a></p>
+    </section>
+    <section>
+  <h2>Pronóstico Mensual Interactivo</h2>
+  <label for="mes">Selecciona un mes:</label>
+  <select id="mes" onchange="mostrarPronostico()">
+    <option value="202505">May 2025</option>
+    <option value="202506">June 2025</option>
+    <option value="202507">July 2025</option>
+    <option value="202508">August 2025</option>
+    <option value="202509">September 2025</option>
+    <option value="202510">October 2025</option>
+  </select>
+
+  <div id="pronostico-container" style="margin-top: 1em;">
+    <img id="imagen-pronostico" src="imagenes/202505.png" alt="Pronóstico Mayo 2025" style="max-width: 100%;">
+  </div>
+</section>
+
+<script>
+  function mostrarPronostico() {
+    const select = document.getElementById("mes");
+    const imagen = document.getElementById("imagen-pronostico");
+    const valor = select.value;
+    imagen.src = "imagenes/" + valor + ".png";
+    imagen.alt = "Pronóstico " + select.options[select.selectedIndex].text;
+  }
+</script>
+
+    <section>
+      <h2>Archivo de Boletines</h2>
+      <ul>
+        <li><a href="boletines/boletin_2025_04.pdf">Abril 2025</a></li>
+        <li><a href="boletines/boletin_2025_03.pdf">Marzo 2025</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Dr. Jorge Llamocca - Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
